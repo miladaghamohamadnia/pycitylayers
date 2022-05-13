@@ -4,15 +4,15 @@ import requests
 import json
 from pprint import pprint
 from shapely.geometry import Polygon, Point, box
-from .queries import query_gql_all_tables, query_gql_all_columns, query_gql_rows
-
+from ..queries import query_gql_all_tables, query_gql_all_columns, query_gql_rows
+from ..utils import get_project_root
+#
+from ..constants import URLS
 #
 
 class Client:
     def __init__(self, source="cerc"):
         self._source = source
-        ### read config yaml 
-        self._read_config() 
         ### get url matching the provided source
         self._url = self._get_url(source) 
         
@@ -69,21 +69,14 @@ class Client:
         res = self._execute_query(query_json)
         return res
     
-    
-    def _read_config(self):
-        with open(os.path.join(os.getcwd(), "pycitylayers/configs.yaml"), "r") as f:
-            try:
-                self._configs = yaml.safe_load(f)
-            except yaml.YAMLError as exc:
-                print(exc)
-            
             
     def _get_url(self, source):
         try:
-            return self._configs["urls"][source]
+            return URLS[source]
         except:
             raise ValueError("invalid source provided!")
         return None
+    
     
     def _execute_query(self, query_json):
         req = requests.post(url=self._url, json=query_json, headers={})
@@ -132,6 +125,8 @@ class PointGQL(GeometryGQL):
         point = Point(x, y)
         point = [xy[0] for xy in point.coords.xy]
         return self.format_geom(point, geom_type=self.geom_type)
+    
+    
     
 class PolygonGQL(GeometryGQL):
     def __init__(self):
