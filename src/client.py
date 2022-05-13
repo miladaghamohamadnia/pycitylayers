@@ -4,7 +4,7 @@ import requests
 import json
 from pprint import pprint
 from shapely.geometry import Polygon, Point, box
-from ..queries import query_gql_all_tables, query_gql_all_columns, query_gql_rows
+from .queries import query_gql_all_tables, query_gql_all_columns, query_gql_rows
 
 #
 
