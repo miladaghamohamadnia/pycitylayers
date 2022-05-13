@@ -1,0 +1,3 @@
+urls:
+    cerc: "https://gql.serv1.miladag.com/v1/graphql"
+    quebec: "https://gql.serv1.miladag.com/v1/graphql"
