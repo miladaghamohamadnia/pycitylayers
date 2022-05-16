@@ -22,6 +22,7 @@ setup(
                         "requests",
                         "shapely",
                         "jupyter",
+                        "fiona==1.8.18",
                         "gql-query-builder==0.1.7",
                         "pycitylayers"
                         ], # add any additional packages that 

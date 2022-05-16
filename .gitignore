@@ -1,2 +1,3 @@
 build/
-pycitylayers.egg-info
+pycitylayers.egg-info/
+**/*.ipynb_checkpoints/
