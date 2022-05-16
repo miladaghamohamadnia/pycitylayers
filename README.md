@@ -7,8 +7,6 @@ It uses GraphQL and PostGIS for geometrical queries.
 
 ## Install
 
-
-operating systems: 
 ### linux
 
 install virtualenv if not already done
@@ -72,6 +70,7 @@ pip install .
 
 ```python
 from pycitylayers.client import Client
+from pycitylayers.utils import PointGQL, PolygonGQL
 from pprint import pprint
 
 client = Client().create(source='cerc')
@@ -87,6 +86,7 @@ pprint(tables)
 
 ```python
 from pycitylayers.client import Client
+from pycitylayers.utils import PointGQL, PolygonGQL
 from pprint import pprint
 
 client = Client().create(source='cerc')
