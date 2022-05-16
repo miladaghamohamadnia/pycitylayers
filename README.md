@@ -74,7 +74,7 @@ pip install .
 from pycitylayers.client import Client
 from pprint import pprint
 
-client = Client(source='cerc')
+client = Client().create(source='cerc')
 
 tables = client.get_all_tables()
 
@@ -89,7 +89,7 @@ pprint(tables)
 from pycitylayers.client import Client
 from pprint import pprint
 
-client = Client(source='cerc')
+client = Client().create(source='cerc')
 
 query_options = {
     'table': 'agents', 
