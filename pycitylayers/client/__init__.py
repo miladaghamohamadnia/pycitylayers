@@ -1,1 +1,1 @@
-from .client import Client, PointGQL, PolygonGQL
+from .client import Client

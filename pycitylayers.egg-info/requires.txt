@@ -1,0 +1,9 @@
+pandas
+numpy
+matplotlib
+pyyaml
+requests
+shapely
+jupyter
+gql-query-builder==0.1.7
+pycitylayers
