@@ -1,6 +1,6 @@
 # Geometry
 
-> Auto-generated documentation for [pycitylayers.utils.geometry](../../../pycitylayers/utils/geometry.py) module.
+> Auto-generated documentation for [pycitylayers.utils.geometry](https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/utils/geometry.py) module.
 
 - [Pycitylayers](../../README.md#pycitylayers) / [Modules](../../MODULES.md#pycitylayers-modules) / [Pycitylayers](../index.md#pycitylayers) / [Utils](index.md#utils) / Geometry
     - [GeometryGQL](#geometrygql)
@@ -13,7 +13,7 @@
 
 ## GeometryGQL
 
-[[find in source code]](../../../pycitylayers/utils/geometry.py#L4)
+[[find in source code]](https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/utils/geometry.py#L4)
 
 ```python
 class GeometryGQL():
@@ -22,7 +22,7 @@ class GeometryGQL():
 
 ### GeometryGQL().format_geom
 
-[[find in source code]](../../../pycitylayers/utils/geometry.py#L8)
+[[find in source code]](https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/utils/geometry.py#L8)
 
 ```python
 def format_geom(coords, epsg=4326, geom_type='Polygon'):
@@ -30,7 +30,7 @@ def format_geom(coords, epsg=4326, geom_type='Polygon'):
 
 ## PointGQL
 
-[[find in source code]](../../../pycitylayers/utils/geometry.py#L19)
+[[find in source code]](https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/utils/geometry.py#L19)
 
 ```python
 class PointGQL(GeometryGQL):
@@ -43,7 +43,7 @@ class PointGQL(GeometryGQL):
 
 ### PointGQL().point
 
-[[find in source code]](../../../pycitylayers/utils/geometry.py#L24)
+[[find in source code]](https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/utils/geometry.py#L24)
 
 ```python
 def point(x, y):
@@ -51,7 +51,7 @@ def point(x, y):
 
 ## PolygonGQL
 
-[[find in source code]](../../../pycitylayers/utils/geometry.py#L31)
+[[find in source code]](https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/utils/geometry.py#L31)
 
 ```python
 class PolygonGQL(GeometryGQL):
@@ -64,7 +64,7 @@ class PolygonGQL(GeometryGQL):
 
 ### PolygonGQL().poly_from_points
 
-[[find in source code]](../../../pycitylayers/utils/geometry.py#L45)
+[[find in source code]](https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/utils/geometry.py#L45)
 
 ```python
 def poly_from_points(points):
@@ -72,7 +72,7 @@ def poly_from_points(points):
 
 ### PolygonGQL().rect_from_two_corners
 
-[[find in source code]](../../../pycitylayers/utils/geometry.py#L36)
+[[find in source code]](https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/utils/geometry.py#L36)
 
 ```python
 def rect_from_two_corners(p1, p2):

@@ -1,6 +1,6 @@
 # Pycitylayers
 
-> Auto-generated documentation for [pycitylayers](../../pycitylayers/__init__.py) module.
+> Auto-generated documentation for [pycitylayers](https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/__init__.py) module.
 
 - [Pycitylayers](../README.md#pycitylayers) / [Modules](../MODULES.md#pycitylayers-modules) / Pycitylayers
     - Modules

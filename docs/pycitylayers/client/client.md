@@ -1,6 +1,6 @@
 # Client
 
-> Auto-generated documentation for [pycitylayers.client.client](../../../pycitylayers/client/client.py) module.
+> Auto-generated documentation for [pycitylayers.client.client](https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/client/client.py) module.
 
 Client class facilitating querying of DB
 
@@ -10,7 +10,7 @@ Client class facilitating querying of DB
 
 ## Client
 
-[[find in source code]](../../../pycitylayers/client/client.py#L22)
+[[find in source code]](https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/client/client.py#L22)
 
 ```python
 class Client():
@@ -19,7 +19,7 @@ class Client():
 
 ### Client.create
 
-[[find in source code]](../../../pycitylayers/client/client.py#L26)
+[[find in source code]](https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/client/client.py#L26)
 
 ```python
 @staticmethod

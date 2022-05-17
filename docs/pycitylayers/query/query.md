@@ -1,6 +1,6 @@
 # Query
 
-> Auto-generated documentation for [pycitylayers.query.query](../../../pycitylayers/query/query.py) module.
+> Auto-generated documentation for [pycitylayers.query.query](https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/query/query.py) module.
 
 Query classes for querying of DB
 
@@ -16,7 +16,7 @@ Query classes for querying of DB
 
 ## Query
 
-[[find in source code]](../../../pycitylayers/query/query.py#L25)
+[[find in source code]](https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/query/query.py#L25)
 
 ```python
 class Query():
@@ -27,7 +27,7 @@ Base Query class
 
 ### Query().url
 
-[[find in source code]](../../../pycitylayers/query/query.py#L47)
+[[find in source code]](https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/query/query.py#L47)
 
 ```python
 @property
@@ -43,7 +43,7 @@ Type: *string*
 
 ### Query().url
 
-[[find in source code]](../../../pycitylayers/query/query.py#L57)
+[[find in source code]](https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/query/query.py#L57)
 
 ```python
 @url.setter
@@ -59,7 +59,7 @@ method to set current url of DB api
 
 ## QueryCKAN
 
-[[find in source code]](../../../pycitylayers/query/query.py#L84)
+[[find in source code]](https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/query/query.py#L84)
 
 ```python
 class QueryCKAN(Query):
@@ -74,7 +74,7 @@ CKAN Querying class
 
 ## QueryGQL
 
-[[find in source code]](../../../pycitylayers/query/query.py#L92)
+[[find in source code]](https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/query/query.py#L92)
 
 ```python
 class QueryGQL(Query):
@@ -89,7 +89,7 @@ GraphQL Querying class
 
 ### QueryGQL().get_all_tables
 
-[[find in source code]](../../../pycitylayers/query/query.py#L99)
+[[find in source code]](https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/query/query.py#L99)
 
 ```python
 def get_all_tables():
@@ -97,7 +97,7 @@ def get_all_tables():
 
 ### QueryGQL().get_columns
 
-[[find in source code]](../../../pycitylayers/query/query.py#L108)
+[[find in source code]](https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/query/query.py#L108)
 
 ```python
 def get_columns(table=''):
@@ -105,7 +105,7 @@ def get_columns(table=''):
 
 ### QueryGQL().get_rows
 
-[[find in source code]](../../../pycitylayers/query/query.py#L120)
+[[find in source code]](https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/query/query.py#L120)
 
 ```python
 def get_rows(**kwargs):
