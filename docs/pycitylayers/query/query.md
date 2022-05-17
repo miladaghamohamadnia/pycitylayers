@@ -59,7 +59,7 @@ method to set current url of DB api
 
 ## QueryCKAN
 
-[[find in source code]](https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/query/query.py#L84)
+[[find in source code]](https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/query/query.py#L148)
 
 ```python
 class QueryCKAN(Query):
@@ -74,7 +74,7 @@ CKAN Querying class
 
 ## QueryGQL
 
-[[find in source code]](https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/query/query.py#L92)
+[[find in source code]](https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/query/query.py#L85)
 
 ```python
 class QueryGQL(Query):
@@ -89,7 +89,7 @@ GraphQL Querying class
 
 ### QueryGQL().get_all_tables
 
-[[find in source code]](https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/query/query.py#L99)
+[[find in source code]](https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/query/query.py#L92)
 
 ```python
 def get_all_tables():
@@ -97,7 +97,7 @@ def get_all_tables():
 
 ### QueryGQL().get_columns
 
-[[find in source code]](https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/query/query.py#L108)
+[[find in source code]](https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/query/query.py#L101)
 
 ```python
 def get_columns(table=''):
@@ -105,7 +105,7 @@ def get_columns(table=''):
 
 ### QueryGQL().get_rows
 
-[[find in source code]](https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/query/query.py#L120)
+[[find in source code]](https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/query/query.py#L113)
 
 ```python
 def get_rows(**kwargs):

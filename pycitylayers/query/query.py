@@ -81,13 +81,6 @@ class Query:
         return None
     
         
-class QueryCKAN(Query):
-    """
-        CKAN Querying class  
-    """
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
         
 class QueryGQL(Query):
     """
@@ -150,3 +143,14 @@ class QueryGQL(Query):
         res.from_requests(req)
         return res
     
+
+
+class QueryCKAN(Query):
+    """
+        CKAN Querying class  
+    """
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        
+        
