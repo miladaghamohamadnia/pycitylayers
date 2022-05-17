@@ -1,3 +1,8 @@
+# -*- coding: utf-8 -*-
+"""
+Query classes for querying of DB
+"""
+
 from __future__ import annotations
 import yaml
 import os
@@ -7,9 +12,20 @@ from ..utils import get_project_root
 from ..utils import Response
 from ..utils import URLS
 
+__author__ = "Milad Aghamohamadnia"
+__copyright__ = "Copyright 2022, CERC Concordia University - Montreal, CANADA"
+__credits__ = ["Ursula Eicker", "Milad Aghamohamadnia"]
+__license__ = "MIT"
+__version__ = "0.1"
+__maintainer__ = "Milad Aghamohamadnia"
+__email__ = "milad.aghamohamadnia"
+__status__ = "Development"
 
 
 class Query:
+    """
+        Base Query class  
+    """
     def __init__(self, *args, **kwargs):
         
         self._source = kwargs['source']
@@ -18,18 +34,46 @@ class Query:
 
     @staticmethod
     def _geometry_validator(geom):
+        """
+            method to check if an input geometry is valid  
+            
+            :param geom: geometry in the form of geojson string
+            :type geom: string
+            :return: flag of validity
+            :rtype: bool
+        """
         return True
     
     @property
     def url(self):
+        """
+            property method to get current url of DB api 
+            
+            :return: url string
+            :rtype: string
+        """
         return self._url
     
     @url.setter
     def url(self, url):
+        """
+            method to set current url of DB api  
+            
+            :param url: url of DB api  
+            :type url: string
+        """
         self._url = url
        
     @staticmethod
     def _get_url(source):
+        """
+            method to return DB url from dictionary of urls
+            
+            :param source: name of DB source
+            :type source: string
+            :return: url of DB api
+            :rtype: string
+        """
         try:
             return URLS[source]
         except:
@@ -38,11 +82,17 @@ class Query:
     
         
 class QueryCKAN(Query):
+    """
+        CKAN Querying class  
+    """
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
         
 class QueryGQL(Query):
+    """
+        GraphQL Querying class  
+    """
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         
