@@ -7,7 +7,7 @@ It uses GraphQL and PostGIS for geometrical queries.
 
 ## Documentation
 
-- Here is the [documentation](https://miladaghamohamadnia.github.io/pycitylayers/) for this project
+- Here is the <a href="https://miladaghamohamadnia.github.io/pycitylayers/" target="_blank">documentation</a> for this project
 
 ## Install
 
