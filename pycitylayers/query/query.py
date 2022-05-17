@@ -81,7 +81,7 @@ class Query:
         return None
     
         
-        
+
 class QueryGQL(Query):
     """
         GraphQL Querying class  
@@ -152,5 +152,18 @@ class QueryCKAN(Query):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        
+    def get_all_tables(self):
+        _schema = []
+        offset = 0
+        step = 500
+        while True:
+            url = f"{self._url}/current_package_list_with_resources?limit={step}&offset={offset}"
+            res = requests.get(url).json()['result']
+            if len(res)==0: break
+            _schema += res
+            offset += step
+        print(len(_schema))
+        # items = json_schema['data']['__schema']['queryType']['fields']
+        # items = [resp['name'] for resp in items]
+        # return items
         

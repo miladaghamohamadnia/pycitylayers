@@ -36,4 +36,3 @@ def query_gql_rows(table="", columns=[], nrows=5, skiprows=0, geometry=None, geo
         json_query = { 'query' :  query, 'variables':  geometry}
     return json_query
 
-
