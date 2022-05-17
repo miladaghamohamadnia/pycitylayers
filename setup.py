@@ -24,7 +24,8 @@ setup(
                         "jupyter",
                         "fiona==1.8.18",
                         "gql-query-builder==0.1.7",
-                        "pycitylayers"
+                        "pycitylayers",
+                        "jinja2<3.1.0"
                         ], # add any additional packages that 
                             # needs to be installed along with your package. Eg: 'caer'
         keywords=['python', 'pycitylayers'],
