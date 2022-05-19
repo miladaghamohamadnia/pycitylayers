@@ -58,6 +58,8 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../client/client/">Client</a>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../client/collections/">Collections</a>
+                </li>
     </ul>
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Query</a>
@@ -77,6 +79,8 @@
     <li class="toctree-l3"><a class="reference internal" href="#queryckan">QueryCKAN</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#see-also">See also</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#queryckancollection">QueryCKAN().collection</a>
     </li>
         </ul>
     </li>
@@ -152,7 +156,10 @@
 <li><a href="#queryurl">Query().url</a></li>
 </ul>
 </li>
-<li><a href="#queryckan">QueryCKAN</a></li>
+<li><a href="#queryckan">QueryCKAN</a><ul>
+<li><a href="#queryckancollection">QueryCKAN().collection</a></li>
+</ul>
+</li>
 <li><a href="#querygql">QueryGQL</a><ul>
 <li><a href="#querygqlget_all_tables">QueryGQL().get_all_tables</a></li>
 <li><a href="#querygqlget_columns">QueryGQL().get_columns</a></li>
@@ -198,6 +205,16 @@ def url(url):
 <ul>
 <li><a href="#query">Query</a></li>
 </ul>
+<h3 id="queryckancollection">QueryCKAN().collection</h3>
+<p><a href="https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/query/query.py#L189">[find in source code]</a></p>
+<pre><code class="language-python">@property
+def collection():
+</code></pre>
+<p>Returns datasets collection of current data source.
+This function will trigger metadata fetch if not done yet</p>
+<h4 id="returns_1">Returns</h4>
+<p>The metadata collection
+Type: <em>List of objects</em></p>
 <h2 id="querygql">QueryGQL</h2>
 <p><a href="https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/query/query.py#L85">[find in source code]</a></p>
 <pre><code class="language-python">class QueryGQL(Query):

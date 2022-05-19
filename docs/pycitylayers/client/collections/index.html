@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Collections - Pycitylayers</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Collections";
+        var mkdocs_page_input_path = "pycitylayers/client/collections.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Pycitylayers
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">pycitylayers</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../MODULES/">Pycitylayers Modules</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Pycitylayers</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../">Pycitylayers</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Client</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../">Client</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../client/">Client</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Collections</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#collection">Collection</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#collection__repr__">Collection().__repr__</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#collectionfrom_dict">Collection().from_dict</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#collectionis_data_loaded">Collection().is_data_loaded</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#collectionmetadata">Collection().metadata</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#collectionsearch">Collection().search</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dataset">Dataset</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#dataset__repr__">Dataset().__repr__</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#datasetfrom_dict">Dataset().from_dict</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#datasettables">Dataset().tables</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#table">Table</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#table__repr__">Table().__repr__</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tablecolumns">Table().columns</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tablefrom_dict">Table().from_dict</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tablequery_simple">Table().query_simple</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Query</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../query/">Query</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../query/query/">Query</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Utils</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../utils/">Utils</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../utils/constants/">Constants</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../utils/geometry/">Geometry</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../utils/query_factory/">Query Factory</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../utils/response/">Response</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../utils/utils/">Utils</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Pycitylayers</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Pycitylayers &raquo;</li>
+          <li>Client &raquo;</li><li>Collections</li>
+    <li class="wy-breadcrumbs-aside">
+        <a href="https://github.com/miladaghamohamadnia/pycitylayers/edit/master/docs/pycitylayers/client/collections.md"
+          class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="collections">Collections</h1>
+<blockquote>
+<p>Auto-generated documentation for <a href="https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/client/collections.py">pycitylayers.client.collections</a> module.</p>
+</blockquote>
+<ul>
+<li><a href="../../..#pycitylayers">Pycitylayers</a> / <a href="../../../MODULES/#pycitylayers-modules">Modules</a> / <a href="../../#pycitylayers">Pycitylayers</a> / <a href="../#client">Client</a> / Collections<ul>
+<li><a href="#collection">Collection</a><ul>
+<li><a href="#collection__repr__">Collection().__repr__</a></li>
+<li><a href="#collectionfrom_dict">Collection().from_dict</a></li>
+<li><a href="#collectionis_data_loaded">Collection().is_data_loaded</a></li>
+<li><a href="#collectionmetadata">Collection().metadata</a></li>
+<li><a href="#collectionsearch">Collection().search</a></li>
+</ul>
+</li>
+<li><a href="#dataset">Dataset</a><ul>
+<li><a href="#dataset__repr__">Dataset().__repr__</a></li>
+<li><a href="#datasetfrom_dict">Dataset().from_dict</a></li>
+<li><a href="#datasettables">Dataset().tables</a></li>
+</ul>
+</li>
+<li><a href="#table">Table</a><ul>
+<li><a href="#table__repr__">Table().__repr__</a></li>
+<li><a href="#tablecolumns">Table().columns</a></li>
+<li><a href="#tablefrom_dict">Table().from_dict</a></li>
+<li><a href="#tablequery_simple">Table().query_simple</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="collection">Collection</h2>
+<p><a href="https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/client/collections.py#L4">[find in source code]</a></p>
+<pre><code class="language-python">class Collection():
+    def __init__(source='cerc'):
+</code></pre>
+<p>class representing info and methods available for interacting
+    with a collection of datasets</p>
+<h3 id="collection__repr__">Collection().__repr__</h3>
+<p><a href="https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/client/collections.py#L78">[find in source code]</a></p>
+<pre><code class="language-python">def __repr__():
+</code></pre>
+<p>repr method showing most important attributes of the class</p>
+<h3 id="collectionfrom_dict">Collection().from_dict</h3>
+<p><a href="https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/client/collections.py#L12">[find in source code]</a></p>
+<pre><code class="language-python">def from_dict(collection_dict):
+</code></pre>
+<p>imports a dictionary object representing the data collection metadata.</p>
+<h4 id="arguments">Arguments</h4>
+<ul>
+<li><code>collection_dict</code> - dict, dictionary of data collection metadata</li>
+</ul>
+<h4 id="returns">Returns</h4>
+<p>None</p>
+<h3 id="collectionis_data_loaded">Collection().is_data_loaded</h3>
+<p><a href="https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/client/collections.py#L66">[find in source code]</a></p>
+<pre><code class="language-python">def is_data_loaded():
+</code></pre>
+<p>checks if any data has been loaded to work with.
+    throws a ValueError in the absence of a data
+    collection and stops the flow of the code.</p>
+<p>:raises: ValueError, when there is no data loaded.</p>
+<h3 id="collectionmetadata">Collection().metadata</h3>
+<p><a href="https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/client/collections.py#L29">[find in source code]</a></p>
+<pre><code class="language-python">@property
+def metadata():
+</code></pre>
+<p>returns the metadata dict loaded previously into the class.</p>
+<h4 id="returns_1">Returns</h4>
+<p>dict, metadata dict of data collection loaded.</p>
+<h3 id="collectionsearch">Collection().search</h3>
+<p><a href="https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/client/collections.py#L37">[find in source code]</a></p>
+<pre><code class="language-python">def search(by_tag=None, by_name=None, return_indices=False):
+</code></pre>
+<p>searches the collection of datasets to return
+    datasets that satisfy the specified criteria.</p>
+<h4 id="arguments_1">Arguments</h4>
+<ul>
+<li><code>by_name</code> - string, search by name if a dataset name attribute contains the given string
+    default: None, which doesn't use this search criterion</li>
+<li><code>by_tag</code> - string, search by tag string if any of dataset tags contains the given string
+    default: None, which doesn't use this search criterion</li>
+<li><code>return_indices</code> - bool, flag for returning the indices of found datasets as well.
+    default: False, which doesn't return indices of found datasets</li>
+</ul>
+<h4 id="returns_2">Returns</h4>
+<p>list|tuple, list of Dataset instances matching the search condition OR a tuple
+    containing the return indices if return_indices flag is True.</p>
+<h2 id="dataset">Dataset</h2>
+<p><a href="https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/client/collections.py#L84">[find in source code]</a></p>
+<pre><code class="language-python">class Dataset():
+    def __init__():
+</code></pre>
+<p>class representing info and methods available for interacting
+    with a dataset. a dataset instance is a collection of data tables.</p>
+<h3 id="dataset__repr__">Dataset().__repr__</h3>
+<p><a href="https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/client/collections.py#L122">[find in source code]</a></p>
+<pre><code class="language-python">def __repr__():
+</code></pre>
+<p>repr method showing most important attributes of the class</p>
+<h3 id="datasetfrom_dict">Dataset().from_dict</h3>
+<p><a href="https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/client/collections.py#L91">[find in source code]</a></p>
+<pre><code class="language-python">def from_dict(dataset_dict):
+</code></pre>
+<p>imports a dictionary object representing the dataset metadata.</p>
+<h4 id="arguments_2">Arguments</h4>
+<ul>
+<li><code>dataset_dict</code> - dict, dictionary of dataset metadata</li>
+</ul>
+<h4 id="returns_3">Returns</h4>
+<p>None</p>
+<h3 id="datasettables">Dataset().tables</h3>
+<p><a href="https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/client/collections.py#L115">[find in source code]</a></p>
+<pre><code class="language-python">@property
+def tables():
+</code></pre>
+<p>returns the tables metadata dict loaded previously into the class.</p>
+<h4 id="returns_4">Returns</h4>
+<p>dict, tables metadata dict of data collection loaded.</p>
+<h2 id="table">Table</h2>
+<p><a href="https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/client/collections.py#L129">[find in source code]</a></p>
+<pre><code class="language-python">class Table():
+    def __init__():
+</code></pre>
+<p>class representing info and methods available for
+    interacting with a data table. a table
+    instance is a collection of data columns and rows.</p>
+<h3 id="table__repr__">Table().__repr__</h3>
+<p><a href="https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/client/collections.py#L153">[find in source code]</a></p>
+<pre><code class="language-python">def __repr__():
+</code></pre>
+<p>repr method showing most important attributes of the class</p>
+<h3 id="tablecolumns">Table().columns</h3>
+<p><a href="https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/client/collections.py#L180">[find in source code]</a></p>
+<pre><code class="language-python">@property
+def columns():
+</code></pre>
+<h3 id="tablefrom_dict">Table().from_dict</h3>
+<p><a href="https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/client/collections.py#L139">[find in source code]</a></p>
+<pre><code class="language-python">def from_dict(table_dict):
+</code></pre>
+<p>imports a dictionary object representing a table metadata.</p>
+<h4 id="arguments_3">Arguments</h4>
+<ul>
+<li><code>table_dict</code> - dict, dictionary of table metadata</li>
+</ul>
+<h4 id="returns_5">Returns</h4>
+<p>None</p>
+<h3 id="tablequery_simple">Table().query_simple</h3>
+<p><a href="https://github.com/miladaghamohamadnia/pycitylayers/blob/main/pycitylayers/client/collections.py#L156">[find in source code]</a></p>
+<pre><code class="language-python">def query_simple(nrows=1, offset=0, as_df=True):
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../client/" class="btn btn-neutral float-left" title="Client"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../query/" class="btn btn-neutral float-right" title="Query">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/miladaghamohamadnia/pycitylayers/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../client/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../query/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
