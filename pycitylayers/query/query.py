@@ -151,8 +151,16 @@ class QueryCKAN(Query):
     """
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        print("##############")
+        self._collection = None
 
-    def get_all_tables(self):
+    def _fetch_collection(self):
+        """
+            Method to retrieve/fetch the entire metadata object from ckan endpoint
+            
+            :return: List of datasets aka. the metadata collection
+            :rtype: List of objects
+        """
         _schema = []
         offset = 0
         step = 500
@@ -163,7 +171,30 @@ class QueryCKAN(Query):
             _schema += res
             offset += step
         print(len(_schema))
-        # items = json_schema['data']['__schema']['queryType']['fields']
-        # items = [resp['name'] for resp in items]
-        # return items
+        self._collection = _schema
+    
+    def _load_collection(self):
+        pass
+        """
+            Method to retrieve/fetch the entire metadata object from ckan endpoint
+            
+            :return: List of datasets aka. the metadata collection
+            :rtype: List of objects
+        """
+        # print( os.path.join(os.path.dirname(__file__), '..') )
+        # with open(fpath, 'r') as f:
+        #     _schema = json.load(f)
+        # self._collection = _schema
+        
+    @property
+    def collection(self):
+        """
+            Returns datasets collection of current data source. 
+            This function will trigger metadata fetch if not done yet
+            
+            :return: The metadata collection
+            :rtype: List of objects
+        """
+        if self._collection is None: self._fetch_collection()
+        return self._collection
         
