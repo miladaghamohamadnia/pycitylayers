@@ -37,12 +37,14 @@ class Client:
         if not 'source' in kwargs:
             raise ValueError("invalid source provided!")
         else:
+            print("Fetching Metadata. Please Wait ...")
             if kwargs['source']=="quebec":
                 return QueryCKAN(*args, **kwargs)
             elif kwargs['source']=="cerc":
                 return QueryGQL(*args, **kwargs)
             else:
                 raise ValueError("invalid input provided!")
+            
             
         
 

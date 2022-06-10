@@ -145,6 +145,8 @@ class CKANTable(Table):
         r = nrows%step
         indices = [skiprows+el*step for el in range(n)] + [nrows+skiprows]
         for ix1, ix2 in zip(indices[:-1], indices[1:]):
+            query_params['limit'] = ix2 - ix1
+            query_params['offset'] = ix1
             res = self.remote_handle.action.datastore_search(resource_id = self._id, **query_params)
             try:
                 res = res['records']
