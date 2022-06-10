@@ -1,9 +1,9 @@
 # pycitylayers
 
 
-This is a Python API to interact with Concordia CERC's open data and other available open portals.
+This is a Python API to interact with Concordia CERC's open data and other available external open portals.
 
-It uses GraphQL and PostGIS for geometrical queries.
+It uses GraphQL and PostGIS for geometrical queries. Meanwhile can handle CKAN backed data storages.
 
 ## Documentation
 
@@ -68,20 +68,28 @@ pip install .
 ```
 
 
+## Structure
+Database --> 
+Collection -->
+Dataset -->
+Tables
+
+
+
 ## Usage
 
-- get all data tables available
+- get all data datasets available
 
 ```python
 from pycitylayers.client import Client
 from pycitylayers.utils import PointGQL, PolygonGQL
-from pprint import pprint
 
 client = Client().create(source='cerc')
+coll = client.collection
 
-tables = client.get_all_tables()
+datasets = coll.datasets
 
-pprint(tables)
+pprint(datasets)
 
 ```
 
@@ -91,19 +99,20 @@ pprint(tables)
 ```python
 from pycitylayers.client import Client
 from pycitylayers.utils import PointGQL, PolygonGQL
-from pprint import pprint
 
 client = Client().create(source='cerc')
+coll = client.collection
+dataset = coll[2]
+table = dataset[0]
 
 query_options = {
-    'table': 'agents', 
-    'columns': ['id', 'vlon', 'vlat'], 
+    'columns': ['code', 'name', 'year'], 
     'nrows': 5, 
     'skiprows': 3,
 }
 
-data = client.get_rows( **query_options )
-pprint(data)
+data = table.query_simple( **query_options )
+print(data)
 
 ```
 
