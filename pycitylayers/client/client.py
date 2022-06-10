@@ -11,11 +11,11 @@ from ..utils import URLS
 
 __author__ = "Milad Aghamohamadnia"
 __copyright__ = "Copyright 2022, CERC Concordia University - Montreal, CANADA"
-__credits__ = ["Ursula Eicker", "Milad Aghamohamadnia"]
+__credits__ = ["Milad Aghamohamadnia", "Ursula Eicker"]
 __license__ = "MIT"
 __version__ = "0.1"
 __maintainer__ = "Milad Aghamohamadnia"
-__email__ = "milad.aghamohamadnia"
+__email__ = "milad.aghamohamadnia@concordia.ca"
 __status__ = "Development"
 
 

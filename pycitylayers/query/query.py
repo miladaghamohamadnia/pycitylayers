@@ -7,7 +7,9 @@ from __future__ import annotations
 import yaml
 import os
 import requests
-from ..utils import query_gql_all_tables, query_gql_all_columns, query_gql_rows
+from ..utils import CKANCollection, GQLCollection
+from ..utils import query_gql_all_tables
+# from ..utils import query_gql_all_columns, query_gql_rows
 from ..utils import get_project_root
 from ..utils import Response
 from ..utils import URLS
@@ -27,7 +29,6 @@ class Query:
         Base Query class  
     """
     def __init__(self, *args, **kwargs):
-        
         self._source = kwargs['source']
         ### get url matching the provided source
         self._url = self._get_url(self._source) 
@@ -80,6 +81,15 @@ class Query:
             raise ValueError("invalid source provided!")
         return None
     
+    @property
+    def collection(self) -> list:
+        return self._collection
+    
+    def query(self):
+        pass
+        
+    
+    
         
 
 class QueryGQL(Query):
@@ -88,60 +98,42 @@ class QueryGQL(Query):
     """
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self._schema = self._fetch_collection()
+        self._collection = GQLCollection(source=self._source, schema=self._schema, rooturl=self._url)
         
-    def get_all_tables(self):
-        schema = self._fetch_schema()
-        json_schema = schema.to_json()
-        if self._source == 'cerc':
-            items = json_schema['data']['__schema']['queryType']['fields']
-            items = [resp['name'] for resp in items]
-            return items
-            
-
-    def get_columns(self, table=""):
-        if len(table)>0 and self._source == 'cerc':
-            query_json = query_gql_all_columns(table)
-            schema = self._execute_query(query_json)
-            json_schema = schema.to_json()
-            items = json_schema['data']['__type']
-            if items: 
-                items = [resp['name'] for resp in items['fields']]
-            else:
-                items = []
-            return items
-    
-    def get_rows(self, **kwargs):
-        if 'geometry' in kwargs:
-            self._geometry_validator(kwargs['geometry'])
-        query_json = query_gql_rows(**kwargs)
-        packet = self._execute_query(query_json)       
-        json_packet = packet.to_json()
-        if 'data' in json_packet:
-            data = json_packet['data']  
-        else:
-            data={}
-        return data
-        
-        
-    def _fetch_schema(self):
+    def _fetch_collection(self):
         query_json = query_gql_all_tables()
-        res = self._execute_query(query_json)
-        return res
-    
-            
-    def _get_url(self, source):
-        try:
-            return URLS[source]
-        except:
-            raise ValueError("invalid source provided!")
-        return None
-    
-    
+        _schema = self._execute_query(query_json)
+        return _schema
+        
     def _execute_query(self, query_json):
         req = requests.post(url=self._url, json=query_json, headers={})
         res = Response()
         res.from_requests(req)
         return res
+    
+    def query(self, table, columns=[], conditions=[], condition_operator=None, nrows=1, skiprows=0, geometry=None, geometry_operation='is_within_poly', as_df=True, *args, **kwargs):
+        datasets, indices = self._collection.search(by_name=table, return_indices=True)
+        if len(indices)<1: 
+            raise ValueError('No data was found')
+        if len(indices)>1: 
+            print('Warning: more than one data was found. returning the first dataset')
+
+        dataset = datasets[0]
+                
+        tables = [table for table in  dataset.tables if table._format=='CSV']
+        
+        if len(tables)>0:
+            table = tables[0]
+            data = table.query_sql(columns=columns, 
+                                            conditions=conditions, 
+                                            condition_operator=condition_operator, 
+                                            nrows=nrows, 
+                                            offset=skiprows, 
+                                            as_df=as_df)
+        else:
+            raise ValueError('Non of data found was queryable!')
+        return data
     
 
 
@@ -151,8 +143,8 @@ class QueryCKAN(Query):
     """
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        print("##############")
-        self._collection = None
+        self._schema = self._fetch_collection()
+        self._collection = CKANCollection(source=self._source, schema=self._schema, rooturl=self._url)
 
     def _fetch_collection(self):
         """
@@ -170,31 +162,33 @@ class QueryCKAN(Query):
             if len(res)==0: break
             _schema += res
             offset += step
-        print(len(_schema))
-        self._collection = _schema
+        return _schema
     
-    def _load_collection(self):
-        pass
-        """
-            Method to retrieve/fetch the entire metadata object from ckan endpoint
-            
-            :return: List of datasets aka. the metadata collection
-            :rtype: List of objects
-        """
-        # print( os.path.join(os.path.dirname(__file__), '..') )
-        # with open(fpath, 'r') as f:
-        #     _schema = json.load(f)
-        # self._collection = _schema
+    
+    def query(self, table, columns=[], conditions=[], condition_operator=None, nrows=1, skiprows=0, as_df=True, *args, **kwargs):
+        datasets, indices = self._collection.search(by_name=table, return_indices=True)
+        if len(indices)<1: 
+            raise ValueError('No data was found')
+        if len(indices)>1: 
+            print('Warning: more than one data was found. returning the first dataset')
+
+        dataset = datasets[0]
+                
+        tables = [table for table in  dataset.tables if table._format=='CSV']
         
-    @property
-    def collection(self):
-        """
-            Returns datasets collection of current data source. 
-            This function will trigger metadata fetch if not done yet
-            
-            :return: The metadata collection
-            :rtype: List of objects
-        """
-        if self._collection is None: self._fetch_collection()
-        return self._collection
+        if len(tables)>0:
+            table = tables[0]
+            data = table.query_sql(columns=columns, 
+                                            conditions=conditions, 
+                                            condition_operator=condition_operator, 
+                                            nrows=nrows, 
+                                            offset=skiprows, 
+                                            as_df=as_df)
+        else:
+            raise ValueError('Non of data found was queryable!')
+        return data
         
+
+
+
+

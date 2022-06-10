@@ -16,7 +16,7 @@ def query_gql_all_columns(table_name):
     json_query = { 'query' :  query }
     return json_query
 
-def query_gql_rows(table="", columns=[], nrows=5, skiprows=0, geometry=None, geometry_operation='is_within_poly', **kwargs):
+def query_gql_rows(table, columns, nrows, skiprows, geometry=None, geometry_operation='is_within_poly', **kwargs):
     if geometry is None:
         query = GqlQuery().fields(columns).query(name=table, input={'limit': nrows, 'offset': skiprows}).generate()
         query = GqlQuery().operation(name='getrows', queries=[query]).generate()
@@ -36,3 +36,10 @@ def query_gql_rows(table="", columns=[], nrows=5, skiprows=0, geometry=None, geo
         json_query = { 'query' :  query, 'variables':  geometry}
     return json_query
 
+def query_gql_num_rows(table_name):
+    query = GqlQuery().fields(['count']).query(name='aggregate').generate()
+    query = GqlQuery().fields([query]).query(name=f'{table_name}_aggregate').generate()
+    query = GqlQuery().operation(name='getrows', queries=[query]).generate()
+    query = query.replace("'","")
+    json_query = { 'query' :  query}
+    return json_query
