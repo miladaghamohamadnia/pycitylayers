@@ -4,8 +4,7 @@ from pprint import pprint
 import numpy as np
 import os
 import pandas as pd
-from jinjasql import JinjaSql
-import wget
+# import wget
 from .datasets import CKANDataset, GQLDataset
 
 

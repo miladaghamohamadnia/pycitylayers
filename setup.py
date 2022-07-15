@@ -14,20 +14,6 @@ setup(
         description=DESCRIPTION,
         long_description=LONG_DESCRIPTION,
         packages=find_packages(),
-        install_requires=[
-                        "pandas",
-                        "numpy",
-                        "matplotlib",
-                        "pyyaml",
-                        "requests",
-                        "shapely",
-                        "jupyter",
-                        "fiona==1.8.18",
-                        "gql-query-builder==0.1.7",
-                        "pycitylayers",
-                        "jinja2<3.1.0"
-                        ], # add any additional packages that 
-                            # needs to be installed along with your package. Eg: 'caer'
         keywords=['python', 'pycitylayers'],
         classifiers= [
             "Development Status :: 3 - Alpha",

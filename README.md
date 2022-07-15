@@ -11,17 +11,14 @@ It uses GraphQL and PostGIS for geometrical queries. Meanwhile can handle CKAN b
 
 ## Install
 
-### linux
+install anaconda or miniconda if not already done
 
-install virtualenv if not already done
-```shell
-sudo pip install --upgrade virtualenv
-```
 create a virtual env
-
 ```shell
-virtualenv -p python3 pycitylayers
+conda create -n pycl python=3.9
+cnoda activate pycl
 ```
+
 clone and install the package
 
 ```shell
@@ -30,41 +27,10 @@ cd pycitylayers
 pip install .
 ```
 
-### Windows
-
-Install pip
-Usually Python3 comes with pip preinstalled. If you get an error "pip command not found", use the following command to install pip:
-
-Launch a command prompt if it isn't already open. To do so, open the Windows search bar, type cmd and click on the icon. Then, run the following command to download the get-pip.py file:
-
+if GDAL error happens:
+install GDAL via conda prior to pip installing
 ```shell
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-```
-
-To install PIP type in the following:
-
-```shell
-python get-pip.py
-```
-
-Now pip should work system wide.
-
-install virtualenv
-```shell
-pip install --upgrade virtualenv
-```
-create a virtual env
-
-```shell
-virtualenv -p python3 pycitylayers
-```
-
-clone and install the package
-
-```shell
-git clone https://github.com/miladaghamohamadnia/pycitylayers.git
-cd pycitylayers
-pip install .
+conda install GDAL
 ```
 
 
@@ -115,5 +81,3 @@ data = table.query_simple( **query_options )
 print(data)
 
 ```
-
-
