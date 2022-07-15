@@ -16,7 +16,7 @@ install anaconda or miniconda if not already done
 create a virtual env
 ```shell
 conda create -n pycl python=3.9
-cnoda activate pycl
+conda activate pycl
 ```
 
 clone and install the package
